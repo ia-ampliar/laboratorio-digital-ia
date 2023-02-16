@@ -18,7 +18,7 @@ A lista de imagens pode ser encontrada na planilha **v1 Seleção Especialista C
 
 Parte II
 
-### **1. Extração dos** _ **Patches** _ **de WSI**
+### **1. Extração dos**  **_Patches_** **de WSI**
 
 O QA disponibiliza um script para a divisão das imagens WSI em _patches_ com o nome `extract\_tiles\_from\_wsi\_openslide.py` cujo o uso é descrito no [Relatório Quick Annotator](https://docs.google.com/document/d/1MCoDmCgpUCUB7PunPNNoLTGoftO0xp7thU4_1iiiUB8/edit#heading=h.i76d10rspvdl) já citado. Para se realizar esta operação em múltiplas imagens é possível utilizar o script `mult\_extract\_tiles.py` presente na pasta [Anotation](https://drive.google.com/drive/folders/1lHYTMcQgypkCy0Y1CCXw6YUBhvDW9WXq?usp=share_link)[Process Scripts](https://drive.google.com/drive/folders/1lHYTMcQgypkCy0Y1CCXw6YUBhvDW9WXq?usp=share_link) e seu uso está especificado no cabeçalho do código. Um exemplo é mostrado abaixo:
 
