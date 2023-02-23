@@ -9,5 +9,4 @@ annotation-geojson/patches/
 annotation-geojson/dataset-sinet-ring/
 annotation-geojson/models/sinete_model.h5
 annotation-geojson/models/sinete_model_2.h5
-annotation-mask/streamlit_imagens/
 annotation-mask/streamlit_images/
