@@ -12,7 +12,7 @@ A instalação do programa, assim com sua utilização, está detalhada no relat
 
 Para se fazer o download das imagens WSI é preciso baixar o RStudio e abrir o script `TCGA_Imagens_dowload.R` e colocar o nome da imagem desejada no parâmetra _barcode_ da função _GDCquery._ Como mostrado abaixo:
 
-![A imagem não pode ser carregada!](https://drive.google.com/file/d/1gvr48Kr6HbP4cr4nqlea-OATr154fpQ_/view?usp=sharing)
+![A imagem não pode ser carregada!](https://github.com/ia-ampliar/laboratorio-digital-ia/blob/master/readme_images/Captura%20de%20tela_20230118_101446.png)
 
 A lista de imagens pode ser encontrada na planilha **v1 Seleção Especialista Colunas Filtrada + stad tcga 2018 clinical data.xlsx** disponível neste [link (Drive)](https://docs.google.com/spreadsheets/d/1K2IdILznDx-GR7o6Py-dkn-G8PMdOrjz/edit#gid=1676572784). Nem todas as imagens podem ser baixadas. O código retorna uma lista das imagens disponíveis quando se tenta baixar uma imagem que não está presente na mesma. Atualmente (18/01/2023) não se consegue baixar imagens muito grandes (acima de 800 Mb).
 
@@ -22,7 +22,7 @@ Parte II
 
 O QA disponibiliza um script para a divisão das imagens WSI em _patches_ com o nome `extract_tiles_from_wsi_openslide.py` cujo o uso é descrito no [Relatório Quick Annotator](https://docs.google.com/document/d/1MCoDmCgpUCUB7PunPNNoLTGoftO0xp7thU4_1iiiUB8/edit#heading=h.i76d10rspvdl) já citado. Para se realizar esta operação em múltiplas imagens é possível utilizar o script `mult_extract_tiles.py` presente na pasta [Anotation](https://drive.google.com/drive/folders/1lHYTMcQgypkCy0Y1CCXw6YUBhvDW9WXq?usp=share_link)[Process Scripts](https://drive.google.com/drive/folders/1lHYTMcQgypkCy0Y1CCXw6YUBhvDW9WXq?usp=share_link) e seu uso está especificado no cabeçalho do código. Um exemplo é mostrado abaixo:
 
-![A imagem não pode ser carregada!](https://drive.google.com/file/d/1YQl3pQhNCaj_FttU7zMG2HL7GesA9Fqm/view?usp=share_link)
+![A imagem não pode ser carregada!](https://github.com/ia-ampliar/laboratorio-digital-ia/blob/master/readme_images/Captura%20de%20tela_20230118_142719.png)
 
 ### **2. Utilização do Quick Annotator**
 
