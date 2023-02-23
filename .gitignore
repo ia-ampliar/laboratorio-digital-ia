@@ -1,0 +1,13 @@
+model-training/.ipynb_checkpoints/
+annotation-mask/.ipynb_checkpoints/
+annotation-geojson/.ipynb_checkpoints/
+.ipynb_checkpoints/
+annotation-geojson/ml-dataset-sinet-ring.zip
+annotation-geojson/ml-dataset-sinet-ring-3c.zip
+annotation-geojson/images/
+annotation-geojson/patches/
+annotation-geojson/dataset-sinet-ring/
+annotation-geojson/models/sinete_model.h5
+annotation-geojson/models/sinete_model_2.h5
+annotation-mask/streamlit_imagens/
+annotation-mask/streamlit_images/
