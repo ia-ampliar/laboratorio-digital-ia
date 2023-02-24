@@ -65,12 +65,12 @@ Uma vez criadas as anotações é possível gerar um arquivo _geojson_ das anota
 
 ### **2. Motando Dataset**
 
-Tendo os arquivos _geojson_ é possível utilizar o notebook `dataset_from_geojson.ipynb` para montar um dataset de duas classes utilizando 80% das imagens para treino, 10% para validação e 10% para teste.  
+Tendo os arquivos _geojson_ é possível utilizar o notebook `dataset_from_geojson.ipynb` para montar um dataset de duas classes utilizando 80% das imagens para treino, 10% para validação e 10% para teste. O arquivo pode ser encontrado na pasta [annotation-geojson](https://github.com/ia-ampliar/laboratorio-digital-ia/tree/master/annotation-geojson).
 
 ### **3. Treinando Classificador**
 
-Uma vez montado o dataset é possível treinar um classificador utilizando o notebook `Anel_de_Sinete_MobileNetV2.ipynb` e salvar o modelo para a seleção dos patches.
+Uma vez montado o dataset é possível treinar um classificador utilizando o notebook `Anel_de_Sinete_MobileNetV2.ipynb` e salvar o modelo para a seleção dos patches. O arquivo pode ser encontrado na pasta [model-training](https://github.com/ia-ampliar/laboratorio-digital-ia/tree/master/model-training).
 
 ### **4. Extração das Regiões de Interece**
 
-Para a extração dos patches é preciso, primeiramente, dividir a _WSI_ como orientado na seção 1 da Parte II do QA e em seguida utilizar o script `patch_selection.ipynb` para salvar somente os patches que possuem regiões de interesse. 
+Para a extração dos patches é preciso, primeiramente, dividir a _WSI_ como orientado na seção 1 da Parte II do QA e em seguida utilizar o script `patch_selection.ipynb` para salvar somente os patches que possuem regiões de interesse. O arquivo pode ser encontrado na pasta [annotation-geojson](https://github.com/ia-ampliar/laboratorio-digital-ia/tree/master/annotation-geojson).
