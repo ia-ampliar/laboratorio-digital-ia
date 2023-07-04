@@ -1,6 +1,8 @@
 # Relatório de Aplicação e Funcionamento do Processo Completo
 
-Relatório que aborda todo o processo de instalação de programas, download de imagens, anotação de imagens e extração das características anotadas de cada imagem.
+Relatório que aborda todo o processo de instalação de programas, download de imagens, anotação de imagens, extração das características anotadas de cada imagem e cração do mapa de calor.
+
+![A imagem não pode ser carregada!](https://github.com/ia-ampliar/laboratorio-digital-ia/blob/master/readme_images/Step%20Diagram%20for%20GUithub.png)
 
 ## Extração de Patches Utilizando o QuickAnnotator 
 
@@ -12,11 +14,15 @@ A instalação do programa, assim com sua utilização, está detalhada no relat
 
 ### **2. Download das Imagens TCGA**
 
-Para se fazer o download das imagens WSI é preciso baixar o RStudio e abrir o script `TCGA_Imagens_dowload.R` e colocar o nome da imagem desejada no parâmetra _barcode_ da função _GDCquery._ Como mostrado abaixo:
+É possível se fazer o download das imagens WSI de duas formas. Na primeira é preciso baixar o RStudio e abrir o script `TCGA_Imagens_dowload.R` e colocar o nome da imagem desejada no parâmetro _barcode_ da função _GDCquery._ Como mostrado abaixo:
 
 ![A imagem não pode ser carregada!](https://github.com/ia-ampliar/laboratorio-digital-ia/blob/master/readme_images/Captura%20de%20tela_20230118_101446.png)
 
 A lista de imagens pode ser encontrada na planilha **v1 Seleção Especialista Colunas Filtrada + stad tcga 2018 clinical data.xlsx** disponível neste [link (Drive)](https://docs.google.com/spreadsheets/d/1K2IdILznDx-GR7o6Py-dkn-G8PMdOrjz/edit#gid=1676572784). Nem todas as imagens podem ser baixadas. O código retorna uma lista das imagens disponíveis quando se tenta baixar uma imagem que não está presente na mesma. Atualmente (18/01/2023) não se consegue baixar imagens muito grandes (acima de 800 Mb).
+
+A segunda forma é mais simples de fazer o download das imagens e não se encontra restrição de tamanho. Utilizando o site [Genomic Data Commons Data Portal](https://portal.gdc.cancer.gov/). Basta copiar o nome do caso por exemplo "TCGA-RD-A8N4", colar no campo de busca e selecionar uma das opções que possuem como descrição o final __slide_image_. Cada opção terá uma imagem diferente do mesmo caso. 
+
+![A imagem não pode ser carregada!](https://github.com/ia-ampliar/laboratorio-digital-ia/blob/master/readme_images/GDC%20Download.png)
 
 Parte II
 
@@ -69,8 +75,14 @@ Tendo os arquivos _geojson_ é possível utilizar o notebook `dataset_from_geojs
 
 ### **3. Treinando Classificador**
 
-Uma vez montado o dataset é possível treinar um classificador utilizando o notebook `Anel_de_Sinete_MobileNetV2.ipynb` e salvar o modelo para a seleção dos patches. O arquivo pode ser encontrado na pasta [model-training](https://github.com/ia-ampliar/laboratorio-digital-ia/tree/master/model-training).
+Uma vez montado o dataset é possível treinar um classificador utilizando o notebook `TFLite_Anel_de_Sinete_MobileNetV2.ipynb` e salvar o modelo quantizado utilizando o _TFLite_ para a seleção dos patches. O arquivo pode ser encontrado na pasta [model-training](https://github.com/ia-ampliar/laboratorio-digital-ia/tree/master/model-training).
 
 ### **4. Extração das Regiões de Interece**
 
 Para a extração dos patches é preciso, primeiramente, dividir a _WSI_ como orientado na seção 1 da Parte II do QA e em seguida utilizar o script `patch_selection.ipynb` para salvar somente os patches que possuem regiões de interesse. O arquivo pode ser encontrado na pasta [annotation-geojson](https://github.com/ia-ampliar/laboratorio-digital-ia/tree/master/annotation-geojson).
+
+### **5. Criação do Mapa de calor**
+
+Utilizando o classificador criado, também é possível gerar um mapa de calor para a _WSI_. Esse mapa de calor é gerado a partir da divisão da imagem em bloco menores e esses blocos por sua vez são divididos em patches. Para cada _patch_ é realizada a inferência e obtida a probabilidade daquele _patch_ representar uma região de interece. Esse probabilidade é armazenada em uma matriz que é utilizada para gerar o mapa de calor. O script pode ser encontrado no arquivo `wsi_full_heatmap.ipynb`.
+
+![A imagem não pode ser carregada!](https://github.com/ia-ampliar/laboratorio-digital-ia/blob/master/readme_images/Mapa%20de%20Calor%20na%20WSI.gif)
